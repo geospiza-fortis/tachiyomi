@@ -124,8 +124,7 @@ open class BrowseSourceController(bundle: Bundle) :
                 presenter.setSourceFilter(presenter.filters)
             },
             onResetClicked = {
-                presenter.resetFilter()
-                filterSheet?.setFilters(presenter.filterItems)
+                filterSheet?.setFilters(presenter.source!!.getFilterList().toItems())
             },
         )
 
